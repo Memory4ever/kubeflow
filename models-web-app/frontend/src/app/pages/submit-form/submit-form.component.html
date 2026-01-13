@@ -1,0 +1,33 @@
+<div class="lib-content-wrapper">
+  <lib-title-actions-toolbar
+    title="New Endpoint"
+    [buttons]="[]"
+    [backButton]="true"
+    (back)="navigateBack()"
+    class="margin-bottom"
+  >
+  </lib-title-actions-toolbar>
+
+  <div class="platform-selector margin-bottom" style="margin-bottom: 20px;">
+    <span style="margin-right: 15px; font-weight: 500;">Select Platform:</span>
+    <input type="radio" id="kserve" name="platform" value="kserve" [checked]="selectedPlatform === 'kserve'" (change)="onPlatformChange('kserve')">
+    <label for="kserve" style="margin-right: 20px; margin-left: 5px; cursor: pointer;">KServe (Standard)</label>
+
+    <input type="radio" id="dynamo" name="platform" value="dynamo" [checked]="selectedPlatform === 'dynamo'" (change)="onPlatformChange('dynamo')">
+    <label for="dynamo" style="margin-left: 5px; cursor: pointer;">Dynamo (Graph Deployment)</label>
+  </div>
+
+  <lib-monaco-editor
+    [(text)]="yaml"
+    language="yaml"
+    [height]="620"
+  ></lib-monaco-editor>
+
+  <lib-submit-bar
+    [allowYAMLEditing]="false"
+    [isApplying]="applying"
+    [createDisabled]="!yaml"
+    (create)="submit()"
+    (cancel)="navigateBack()"
+  ></lib-submit-bar>
+</div>

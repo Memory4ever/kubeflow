@@ -1,0 +1,68 @@
+<lib-details-list-item key="URL external" [copyValue]="externalUrl">
+  {{ externalUrl }}
+</lib-details-list-item>
+
+<lib-details-list-item key="URL internal" [copyValue]="internalUrl">
+  {{ internalUrl }}
+</lib-details-list-item>
+
+<lib-details-list-item key="Component" [chipsList]="components">
+</lib-details-list-item>
+
+<lib-details-list-item *ngIf="basePredictor?.storageUri" key="Storage URI">
+  <app-storage-uri
+    [namespace]="namespace"
+    [basePredictor]="basePredictor"
+  ></app-storage-uri>
+</lib-details-list-item>
+
+<lib-details-list-item key="Predictor">
+  {{ predictorType }}
+</lib-details-list-item>
+
+<lib-details-list-item key="Runtime">
+  {{ predictorRuntime }}
+</lib-details-list-item>
+
+<lib-details-list-item
+  key="Runtime Version"
+  *ngIf="basePredictor?.runtimeVersion"
+>
+  {{ basePredictor.runtimeVersion }}
+</lib-details-list-item>
+
+<lib-details-list-item
+  key="Protocol Version"
+  *ngIf="basePredictor?.protocolVersion"
+>
+  {{ basePredictor.protocolVersion }}
+</lib-details-list-item>
+
+<lib-conditions-table
+  *ngIf="inferenceService?.status"
+  [conditions]="inferenceService.status?.conditions"
+  title="InferenceService Conditions"
+  class="negative-margin page-padding"
+></lib-conditions-table>
+
+<lib-advanced-options text="Components status" *ngIf="inferenceService?.status">
+  <app-serving-component-overview
+    componentName="predictor"
+    [ownedObjs]="ownedObjects?.predictor"
+    [status]="inferenceService?.status?.components?.predictor"
+  ></app-serving-component-overview>
+
+  <app-serving-component-overview
+    *ngIf="inferenceService?.status?.components?.transformer"
+    componentName="transformer"
+    [ownedObjs]="ownedObjects?.transformer"
+    [status]="inferenceService?.status?.components?.transformer"
+  ></app-serving-component-overview>
+
+  <app-serving-component-overview
+    *ngIf="inferenceService?.status?.components?.explainer"
+    componentName="explainer"
+    [ownedObjs]="ownedObjects?.explainer"
+    [status]="inferenceService?.status?.components?.explainer"
+  ></app-serving-component-overview>
+</lib-advanced-options>
