@@ -42,3 +42,11 @@
 	path = trainer
 	url = https://github.com/kubeflow/trainer.git
 	branch = master
+[submodule "kserve"]
+	path = kserve
+	url = https://github.com/kserve/kserve.git
+	branch = master
+[submodule "models-web-app"]
+	path = models-web-app
+	url = https://github.com/kserve/models-web-app.git
+	branch = master
