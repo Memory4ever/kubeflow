@@ -1,0 +1,44 @@
+[submodule "pipelines-components"]
+	path = pipelines-components
+	url = https://github.com/kubeflow/pipelines-components.git
+	branch = main
+[submodule "notebooks"]
+	path = notebooks
+	url = https://github.com/kubeflow/notebooks.git
+	branch = main
+[submodule "spark-operator"]
+	path = spark-operator
+	url = https://github.com/kubeflow/spark-operator.git
+	branch = master
+[submodule "model-registry"]
+	path = model-registry
+	url = https://github.com/kubeflow/model-registry.git
+	branch = main
+[submodule "sdk"]
+	path = sdk
+	url = https://github.com/kubeflow/sdk.git
+	branch = main
+[submodule "mpi-operator"]
+	path = mpi-operator
+	url = https://github.com/kubeflow/mpi-operator.git
+	branch = master
+[submodule "pipelines"]
+	path = pipelines
+	url = https://github.com/kubeflow/pipelines.git
+	branch = master
+[submodule "dashboard"]
+	path = dashboard
+	url = https://github.com/kubeflow/dashboard.git
+	branch = main
+[submodule "katib"]
+	path = katib
+	url = https://github.com/kubeflow/katib.git
+	branch = master
+[submodule "manifests"]
+	path = manifests
+	url = https://github.com/kubeflow/manifests.git
+	branch = master
+[submodule "trainer"]
+	path = trainer
+	url = https://github.com/kubeflow/trainer.git
+	branch = master
